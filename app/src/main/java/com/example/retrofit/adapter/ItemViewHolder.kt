@@ -1,17 +1,16 @@
 package com.example.retrofit.adapter
 
 import androidx.recyclerview.widget.RecyclerView
-import com.example.retrofit.databinding.ListBinding
+import com.example.retrofit.databinding.DayWeatherItemBinding
 import com.example.retrofit.retrofit.responce.Forecast
 
 class ItemViewHolder(
-    private val viewBinding: ListBinding
-
+    private val viewBinding: DayWeatherItemBinding
 ) : RecyclerView.ViewHolder(viewBinding.root) {
+    fun bind(model: Forecast.Forecastday) {
 
-    fun bind(weatherResponse: Forecast.Forecastday.Day) {
-
-        viewBinding.info.text = weatherResponse.maxtempC.toInt().toString()
+        viewBinding.date.text = "Date is: ${model.date}"
+        viewBinding.info.text = "Max tempreture is : ${model.day.maxtempC}"
 
     }
 }

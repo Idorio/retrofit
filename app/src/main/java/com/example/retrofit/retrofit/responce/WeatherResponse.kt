@@ -4,7 +4,7 @@ package com.example.retrofit.retrofit.responce
 import com.google.gson.annotations.SerializedName
 
 data class WeatherResponse(
-
+    @SerializedName("forecast")
     val forecast: Forecast
 )
 
